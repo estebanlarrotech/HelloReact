@@ -1,19 +1,39 @@
 
-// import { Container } from './styles';
+/* eslint-disable react/prop-types */
+import './style.css'
 
-function footer() {
+function Footer({page , updateStateOfPage}) {
   return (
-    <div>
-      <ul>
-      <li>Home</li>
-      <li>About Us</li>
+    <div className="nes-container with-title is-centered">
+        <p className="title">Footer</p>
+        <ul className="footer">
+        <li
+          onClick={() => updateStateOfPage("Home")}
+          className={page === "Home" ? "nes-btn is-success" : ""}
+        >
+          Home
+        </li>
+        <li
+          onClick={() => updateStateOfPage("Quem somos")}
+          className={page === "Quem somos" ? "nes-btn is-success" : ""}
+        >
+          Quem somos
+        </li>
+        <li
+          onClick={() => updateStateOfPage("Contatos")}
+          className={page === "Contatos" ? "nes-btn is-success": ""}
+        >
+          Contatos
+        </li>
       </ul>
-     <div>Contact Us</div>
-     <p>buenopues@gmail.com</p>
-    <p> <a href="https://whatsapp.com">Whatsapp</a> </p>
-     </div>
-  )
-  
+      <div>Contatos</div>
+      <p>fredd@email.com</p>
+
+      <p>
+        <a href="http://whatsapp.com">Whatsapp</a>
+      </p>
+    </div>
+  );
 }
 
-export default footer;
+export default Footer;
